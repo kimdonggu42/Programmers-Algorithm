@@ -4,19 +4,7 @@
 // 2. 내림차순으로 정렬 시 내림차순 한 배열의 각 해당 요소의 index값 + 1 한 값이 각 원소들의 응급도 크기
 // 3. 원본 배열의 각 요소를 내림차순 한 배열의 각 해당 요소의 index값 + 1 한 값으로 대체
 
-
-// function solution(emergency) {  // [3, 76, 24]
-//   // 내림차순으로 정렬하여 원본 배열을 변경하지 않는 새로운 배열로 생성
-//   let newArr = emergency.slice().sort((a, b) => b - a);  // [76, 24, 3]
-
-//   return emergency.map(function (value) {
-//     // emergency의 각 요소를 순회하면서 value로 입력받은 emergency의 각 요소를
-//     // newArr에서 찾은 index값 + 1 한 값으로 대체한 새로운 배열을 리턴한다.
-//     return newArr.indexOf(value) + 1;  // value가 76일 경우 newArr에서 76의 index + 1은 1이므로 76은 1로 리턴된다.
-//   })
-// }
-
-
+// Ver 1 / for 문 사용 버전
 function solution(emergency) {
 
   // 원본 배열을 변경하지 않는 새로운 emergency 생성
@@ -33,6 +21,18 @@ function solution(emergency) {
   }
   return result;
 }
+
+//  Ver 2 / slice, map 메서드 사용 버전
+// function solution(emergency) {  // [3, 76, 24]
+//   // 내림차순으로 정렬하여 원본 배열을 변경하지 않는 새로운 배열로 생성
+//   let newArr = emergency.slice().sort((a, b) => b - a);  // [76, 24, 3]
+
+//   return emergency.map(function (value) {
+//     // emergency의 각 요소를 순회하면서 value로 입력받은 emergency의 각 요소를
+//     // newArr에서 찾은 index값 + 1 한 값으로 대체한 새로운 배열을 리턴한다.
+//     return newArr.indexOf(value) + 1;  // value가 76일 경우 newArr에서 76의 index + 1은 1이므로 76은 1로 리턴된다.
+//   })
+// }
 
 
 
