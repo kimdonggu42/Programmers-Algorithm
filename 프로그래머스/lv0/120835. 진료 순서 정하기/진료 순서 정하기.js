@@ -1,47 +1,30 @@
-// [3, 76, 24] => [76, 24, 3] => [0, 1, 2] => [1 ,2, 3]
+// 1. emergency([3, 76, 24])를 내림차순으로 정렬한다.  // [76, 24, 3]
+// 2. 내림차순으로 정렬한 각 요소의 index값에 1을 더한 값이 emergency 각 요소들의 응급도가 된다.  // [76, 24, 3] === [1, 2, 3]
+// 3. 내림차순으로 졍렬한 각 요소의 index + 1한 값을 다시 원래 emergency 요소의 순서대로 위치시켜야 하기 때문에  // [3, 76, 24] === [3, 1, 2]
+// 4. 내림차순으로 정렬한 배열에서 emergecny 요소의 순서(3 -> 76 -> 24)대로 index값을 찾은 후, 1을 더한 값을 빈배열에 넣어준다.
+
+function solution(emergency) {  // [3, 76, 24]
     
-// 1. 내림차순 정렬
-// 2. 내림차순으로 정렬 시 내림차순 한 배열의 각 해당 요소의 index값 + 1 한 값이 각 원소들의 응급도 크기
-// 3. 원본 배열의 각 요소를 내림차순 한 배열의 각 해당 요소의 index값 + 1 한 값으로 대체
-
-// Ver 1 / for 문 사용 버전
-function solution(emergency) {
-
-  // 원본 배열을 변경하지 않는 새로운 emergency 생성
-  newEmergency = [];  // [3, 76, 24]
-  for (let i = 0; i < emergency.length; i++) {
-    newEmergency.push(emergency[i]);
-  }
-  // emergency를 내림차순으로 정렬한 새로운 배열 생성
-  let downArr = emergency.sort((a, b) => b - a);  // // [76, 24, 3]
-  // downArr에서 순서대로 newEmergency에 해당하는 값의 index의 값을 찾아서 1을 더해준 후 빈 배열에 담아준다.
-  let result = [];
-  for (let j = 0; j < emergency.length; j++) {
-    result.push(downArr.indexOf(newEmergency[j]) + 1)
-  }
-  return result;
+    let sortedEmergency = [...emergency].sort((a, b) => b - a);  // [76, 24, 3]
+    let result = [];
+    
+    for (let i = 0; i < emergency.length; i++) {
+        result.push(sortedEmergency.indexOf(emergency[i]) + 1);
+        // result.push(sortedEmergency.indexOf(sortedEmergency[i] + 1); => 이렇게 하면 [1, 2, 3] 순서로 담긴다.
+    }
+    return result;
 }
 
-//  Ver 2 / slice, map 메서드 사용 버전
-// function solution(emergency) {  // [3, 76, 24]
-//   // 내림차순으로 정렬하여 원본 배열을 변경하지 않는 새로운 배열로 생성
-//   let newArr = emergency.slice().sort((a, b) => b - a);  // [76, 24, 3]
+// 1. emergency를 내림차순으로 정렬한다. [76, 24, 3]
+// 2. 정렬한 배열의 인덱스 값에 1을 더한다. [1, 2, 3]
+// 3. emergency의 각 요소와 매칭되는 내림차순 한 배열의 각 해당 요소의 index값 + 1 한 값으로 대체
 
-//   return emergency.map(function (value) {
-//     // emergency의 각 요소를 순회하면서 value로 입력받은 emergency의 각 요소를
-//     // newArr에서 찾은 index값 + 1 한 값으로 대체한 새로운 배열을 리턴한다.
-//     return newArr.indexOf(value) + 1;  // value가 76일 경우 newArr에서 76의 index + 1은 1이므로 76은 1로 리턴된다.
-//   })
+// function solution(emergency) {
+    
+//     let sortedEmergency = [...emergency].sort((a, b) => b - a);
+//     // let sortedEmergency = emergency.slice().sort((a, b) => b - a);
+    
+//     return emergency.map(function(value) {
+//         return sortedEmergency.indexOf(value) + 1;
+//     })
 // }
-
-
-
-
-
-
-
-
-
-
-
-
