@@ -15,3 +15,13 @@ function solution(array) {
   }
   return count;
 }
+
+// 다른 방법
+// function solution(array) {
+//   // let arr1 = array.join('') === '77717'
+//   // arr1.split('') === ['7', '7', '7', '1', '7']
+
+//   // array의 요소 중 두 자리 이상인 수에 7이 몇 번 있는지 카운트하기 위해
+//   // array를 하나의 문자열로 합친 후 filter 메서드로 7만 걸러내기 위해 split을 이용해 배열로 변환한다.
+//   return array.join('').split('').filter((value) => value === '7').length;
+// }
