@@ -11,11 +11,8 @@ function solution(denum1, num1, denum2, num2) {
   // 분자와 분모의 최대공약수 구하기  
   for (let i = 1; i <= carculateNum; i++) {
     // 분자와 분모를 같은 수로 나눠서 나누어 떨어지는 수(공약수) 중 가장 큰 수(최대공약수)를 구한다.
-    // (주의 : i가 1부터 들어가는데 i가 1일 경우 if문의 조건을 충족한다.
-    // 하지만 반복문이 있기 때문에 i가 분모와 같아질 때 까지 1씩 증가하면서 if문에 계속 들어가므로(한 번만 들어가고 끝나는게 아님)
-    // if문은 조건을 만족하는 가장 마지막 i가 들어와야 종료된다.)
     if (carculateDenum % i === 0 && carculateNum % i === 0) {
-      leastCommonMultiple = i;
+      leastCommonMultiple = i;  // return문이 없기 때문에 조건을 만족하는 첫 i =1이 들어와도 반복문이 계속 진행된다.
     }
   }
   // 분자와 분모를 최대공약수로 나누어서 기약 분수로 만들어준다.
@@ -23,6 +20,14 @@ function solution(denum1, num1, denum2, num2) {
   result.push(carculateDenum / leastCommonMultiple, carculateNum / leastCommonMultiple);
   return result;
 };
+
+
+// 주의 : i가 1부터 들어가는데 i가 1일 경우 if문의 조건을 충족한다.
+// 하지만 leastCommonMultiple = i 앞에 return문이 붙지 않았으므로
+// i = 1에서 바로 조건을 충족해도 반복문을 끝까지 돈다.
+// if (carculateDenum % i === 0 && carculateNum % i === 0) {
+//   leastCommonMultiple = i;
+// }
 
 
 
