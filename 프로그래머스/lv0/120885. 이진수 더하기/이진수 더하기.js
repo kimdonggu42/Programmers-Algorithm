@@ -6,7 +6,5 @@
 // 2. 더한 결과값을 다시 2진법으로 변환(toString)
 
 function solution(bin1, bin2) {
-    let binSum = parseInt(Number(bin1), 2) + parseInt(Number(bin2), 2)
-    return binSum.toString(2)
-    
+    return (parseInt(Number(bin1), 2) + parseInt(Number(bin2), 2)).toString(2);
 }
