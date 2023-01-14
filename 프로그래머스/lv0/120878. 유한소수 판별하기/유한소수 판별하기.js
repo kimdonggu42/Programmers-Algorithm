@@ -33,39 +33,3 @@ function solution(a, b) {
         return 2;
     }
 }
-
-
-// function solution(a, b) {
-//     let GCD = 0;
-
-//     for (let i = 1; i <= Math.min(a, b); i++) {
-//         if (a % i === 0 && b % i === 0) {
-//             GCD = i;  // 1
-//         }
-//     }
-
-//     let denominator = b / GCD
-//     let factorsOfB = [];
-
-//     for (let j = 2; j <= denominator; j++) {
-//         if (denominator % j === 0) {
-//             factorsOfB.push(j);  // [2, 4, 5, 10, 20], [3, 7, 17, 21, 51, 119, 357]
-//         }
-//     }
-
-//     let result = [];
-//     let prime = true;
-
-//     for (let k = 0; k < factorsOfB.length; k++) {
-//         for (let l = 2; l < factorsOfB[k]; l++) {
-//             if (factorsOfB[k] % l === 0) {
-//                 prime = false;
-//                 break;
-//             }
-//         }
-//         if (prime) {
-//             result.push(factorsOfB[k]);
-//         }
-//     }
-//    return result;
-// }
