@@ -6,9 +6,9 @@
 
 function solution(chicken) {
     let serviceChicken = 0;
-    
-    for (let i = chicken; 1 <= i; i = i / 10) {
-        serviceChicken = serviceChicken + i
+
+    for (let i = chicken; 1 < i; i = i / 10) {
+        serviceChicken = serviceChicken + i;
     }
-    return Math.floor(serviceChicken / 10)
+    return Math.floor(serviceChicken / 10);
 }
