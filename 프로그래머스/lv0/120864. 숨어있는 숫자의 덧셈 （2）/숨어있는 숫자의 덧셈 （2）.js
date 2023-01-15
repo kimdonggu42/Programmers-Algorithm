@@ -3,7 +3,7 @@ function solution(my_string) {  // "aAb1B2cC34oOp"
     let arr = [...my_string];  // ['a', 'A', 'b', '1', 'B', '2', 'c', 'C', '3', '4', 'o', 'O', 'p']
     let result = 0;
 
-    // step 2. 배열로 바꿔준 my_string의 요소 중 문자열인 요소들을 모두 'a'로 바꿔준다.
+    // step 2. 배열로 바꿔준 my_string의 요소 중 NaN(문자열)인 요소들을 모두 'a'로 바꿔준다.
     for (let i = 0; i < arr.length; i++) {
         if (isNaN(arr[i])) {
             arr[i] = 'a'  // ['a', 'a', 'a', '1', 'a', '2', 'a', 'a', '3', '4', 'a', 'a', 'a']
@@ -13,11 +13,9 @@ function solution(my_string) {  // "aAb1B2cC34oOp"
     // step 3. arr를 하나의 문자열로 합친 후, 다시 'a'를 구분자로 나눠준다.
     let arrJoin = arr.join('').split('a')  // 'aaa1a2aa34aaa' -> ['', '', '', '1', '2', '', '34', '', '', '']
 
-    // step 4. arrJoin의 요소 중 숫자인 요소는 result에 더해준다.
+    // step 4. arrJoin의 요소들을 숫자로 바꿔준 후 result에 더해준다.
     for (let j = 0; j < arrJoin.length; j++) {
-        if (!isNaN(arrJoin[j])) {
-            result = result + Number(arrJoin[j])
-        }
+        result = result + Number(arrJoin[j])
     }
     return result;
 }
