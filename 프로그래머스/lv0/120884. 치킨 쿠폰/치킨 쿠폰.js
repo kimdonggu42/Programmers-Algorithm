@@ -29,7 +29,10 @@ function solution(chicken) {
 //     let serviceChicken = 0;
 
 //     while (coupon >= 10) {
+//         // 3. 구해놨던 남은 쿠폰의 개수를 가지고 주문할 수 있는 서비스 치킨의 개수를 다시 구한다. 
+//         // 1. 먼저 처음 쿠폰의 개수에서 주문할 수 있는 서비스 치킨의 개수를 구하고,
 //         serviceChicken = serviceChicken + Math.floor(coupon / 10)
+//         // 2. 남은 쿠폰의 개수를 구한다.
 //         coupon = Math.floor(coupon / 10) + coupon % 10
 //     }
 //     return serviceChicken;
