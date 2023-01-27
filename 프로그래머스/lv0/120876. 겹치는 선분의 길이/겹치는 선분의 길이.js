@@ -11,8 +11,8 @@ function solution(lines) {
     }
 
     // 선분들이 한 번 이상 지나간 구간의 수를 구한다.
-    for (let k = 0; k < linesRange.length; k++) {
-        if (1 < linesRange[k]) {
+    for (let i = 0; i < linesRange.length; i++) {
+        if (1 < linesRange[i]) {
             result = result + 1;
         }
     }
