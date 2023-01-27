@@ -11,8 +11,8 @@ function solution(lines) {
     absFlatLines.push(Math.abs(flatLines[i]));
   }
 
-  let maxNum = Math.max(...absFlatLines);
-  let linesRange = new Array(maxNum * 2).fill(0);
+  let maxNum = Math.max(...absFlatLines);  // lines 요소들 중 최대값
+  let linesRange = new Array(maxNum * 2).fill(0);  // 0을 기준으로 최대값의 크기만큼 대칭적으로 배열 생성
 
   // 각 선분들이 지나간 자리(index)를 1로 채운다.
   for (let i = 0; i < lines.length; i++) {
