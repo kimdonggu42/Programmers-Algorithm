@@ -11,9 +11,10 @@ function solution(id_pw, db) {
     }
     // 하나의 for문에 "fail" 조건도 같이 돌릴 경우 첫 번째 요소에서 아이디가 일치하지 않으면
     // 반복문이 더 돌지 않고 바로 "fail"을 리턴하기 때문에 따로 분리
-    for (let j = 0; j < db.length; j++) {
-        if (id_pw[0] !== db[j][0]) {
-            return "fail";
-        }
-    }
+    // for (let j = 0; j < db.length; j++) {
+    //     if (id_pw[0] !== db[j][0]) {
+    //         return "fail";
+    //     }
+    // }
+    return "fail"
 }
