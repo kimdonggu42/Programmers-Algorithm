@@ -3,6 +3,8 @@ function solution(array) {  // [1, 2, 3, 3, 4, 4, 4, 4, 4]
 
     // key는 array요소, value는 해당 요소의 빈도로 하는 프로퍼티를 빈 객체에 담는다.
     for (let i = 0; i < array.length; i++) {
+        // countObj에 key는 array의 요소이고 value는 1인 프로퍼티를 추가하고,
+        // 배열을 돌면서 같은 key값이 나올때 마다 value값에 1을 더한다.
         if (countObj[array[i]]) {
             countObj[array[i]] += 1;
         } else {
