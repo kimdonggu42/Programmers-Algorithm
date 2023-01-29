@@ -15,7 +15,7 @@ function solution(array) {  // [1, 2, 3, 3, 4, 4, 4, 4, 4]
 
     // 프로퍼티 중 value값으로 maxValue를 가지고 있는 key들만 담은 배열 생성
     // ex) Object.keys(countObj) = [1, 2, 3, 4]일때, (key에 1, 2, 3, 4가 들어감)
-    // countObj[4]의 값은 5이고 maxValue의 값도 5이기 때문에 mode에 담긴다.
+    // countObj[4]의 값은 5이고 maxValue의 값도 5이기 때문에 4가 mode에 담긴다.
     let mode = Object.keys(countObj).filter((key) => {
         return countObj[key] === maxValue;
     })
