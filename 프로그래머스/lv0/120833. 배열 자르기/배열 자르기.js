@@ -1,3 +1,7 @@
+function solution(numbers, num1, num2) {
+    return numbers.slice(num1, num2 + 1);
+}
+
 // function solution(numbers, num1, num2) {
 //     let result = [];
 
@@ -6,7 +10,3 @@
 //     }
 //     return result;
 // }
-
-function solution(numbers, num1, num2) {
-    return numbers.slice(num1, num2 + 1);
-}
