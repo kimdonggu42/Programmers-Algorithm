@@ -1,14 +1,11 @@
 function solution(price, money, count) {
-  let arr = [];
+
   let sum = 0;
 
   for (let i = 1; i <= count; i++) {
-    arr.push(price * i);
+    sum = sum + price * i;
   }
 
-  for (let i = 0; i < arr.length; i++) {
-    sum = sum + arr[i];
-  }
 
   // 놀이기구를 count번 타는데 필요한 금액의 합(sum)이
   // 원래 가지고 있던 돈인 money보다 더 많이 든다면 모자란 금액을 리턴하고,  
