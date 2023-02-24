@@ -22,12 +22,15 @@ function solution(numlist, n) {  // [1, 2, 3, 4, 5, 6]
 }
 
 // function solution(numlist, n) {
-//     return numlist.sort((a,b) => {
-//         let A = Math.abs(a-n);
-//         let B = Math.abs(b-n);
+//     return numlist.sort((a, b) => {
+//         let A = Math.abs(a - n);
+//         let B = Math.abs(b - n);
 //         // 거리가 같다면 더 큰 수를 우선 배치
-//         if(A === B) return b-a
+//         if (A === B) {
+//             return b - a;
 //         // 다르다면 거리별 오름차순 정렬
-//         return A-B
+//         } else {
+//             return A - B;
+//         }
 //     })
 // }
