@@ -1,5 +1,5 @@
 function solution(s) {
-    let splitWord = s.split(' ').slice();
+    let splitWord = s.split(' ');
     let changeWord = [];
     let result = [];
 
@@ -18,5 +18,6 @@ function solution(s) {
     for (let i = 0; i < changeWord.length; i++) {
         result.push(changeWord[i].join(''))
     }
+    
     return result.join(' ');
 }
