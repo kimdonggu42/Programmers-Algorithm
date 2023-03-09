@@ -11,35 +11,31 @@ function solution(n, arr1, arr2) {
   for (let i = 0; i < n; i++) {
     zeroNum = zeroNum + 0;
   }
+    
+  let binaryArr1 = arr1.map((value) => {  // ["01001","10100","11100","10010","01011"]
+      return (zeroNum + value.toString(2)).substr(-zeroNum.length);
+  })
+  let binaryArr2 = arr2.map((value) => {  // ["11110","00001","10101","10001","11100"]
+      return (zeroNum + value.toString(2)).substr(-zeroNum.length);
+  })
 
-  let binaryArr1 = [];
-  let binaryArr2 = [];
-
-  for (let i = 0; i < n; i++) {
-    binaryArr1.push((zeroNum + arr1[i].toString(2)).substr(-zeroNum.length));
-  }
-  for (let i = 0; i < n; i++) {
-    binaryArr2.push((zeroNum + arr2[i].toString(2)).substr(-zeroNum.length));
-  }
-
-  let converseArr = [];
+  let converseArr = [];  // [["#","#","#","#","#"],["#"," ","#"," ","#"],["#","#","#"," ","#"],["#"," "," ","#","#"],["#","#","#","#","#"]]
 
   for (let i = 0; i < n; i++) {
-    let converse = [];
+    let converseEl = [];
     for (let j = 0; j < n; j++) {
       if (binaryArr1[i][j] === '1' || binaryArr2[i][j] === '1') {
-        converse.push('#');
+        converseEl.push('#');
       } else if (binaryArr1[i][j] === '0' && binaryArr2[i][j] === '0') {
-        converse.push(' ');
+        converseEl.push(' ');
       }
-    }
-    converseArr.push(converse);
+    } 
+    converseArr.push(converseEl);
   }
 
-  let result = [];
+  let result = converseArr.map((value) => {
+      return value.join('');
+  })
 
-  for (let i = 0; i < n; i++) {
-    result.push(converseArr[i].join(''));
-  }
   return result;
 }
