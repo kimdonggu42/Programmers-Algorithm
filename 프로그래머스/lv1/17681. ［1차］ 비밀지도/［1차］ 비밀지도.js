@@ -6,36 +6,36 @@
 // 2. arr1과 arr2를 합침
 // 3. 합친 결과를 #과 공백으로 변환
 function solution(n, arr1, arr2) {
-  let zeroNum = '';
+    let zeroNum = '';
 
-  for (let i = 0; i < n; i++) {
-    zeroNum = zeroNum + 0;
-  }
-    
-  let binaryArr1 = arr1.map((value) => {  // ["01001","10100","11100","10010","01011"]
-      return (zeroNum + value.toString(2)).substr(-zeroNum.length);
-  })
-  let binaryArr2 = arr2.map((value) => {  // ["11110","00001","10101","10001","11100"]
-      return (zeroNum + value.toString(2)).substr(-zeroNum.length);
-  })
+    for (let i = 0; i < n; i++) {
+        zeroNum = zeroNum + 0;
+    }
 
-  let converseArr = [];  // [["#","#","#","#","#"],["#"," ","#"," ","#"],["#","#","#"," ","#"],["#"," "," ","#","#"],["#","#","#","#","#"]]
+    let binaryArr1 = arr1.map((value) => {  // ["01001","10100","11100","10010","01011"]
+        return (zeroNum + value.toString(2)).substr(-zeroNum.length);
+    })
+    let binaryArr2 = arr2.map((value) => {  // ["11110","00001","10101","10001","11100"]
+        return (zeroNum + value.toString(2)).substr(-zeroNum.length);
+    })
 
-  for (let i = 0; i < n; i++) {
-    let converseEl = [];
-    for (let j = 0; j < n; j++) {
-      if (binaryArr1[i][j] === '1' || binaryArr2[i][j] === '1') {
-        converseEl.push('#');
-      } else if (binaryArr1[i][j] === '0' && binaryArr2[i][j] === '0') {
-        converseEl.push(' ');
-      }
-    } 
-    converseArr.push(converseEl);
-  }
+    let converseArr = [];  // [["#","#","#","#","#"],["#"," ","#"," ","#"],["#","#","#"," ","#"],["#"," "," ","#","#"],["#","#","#","#","#"]]
 
-  let result = converseArr.map((value) => {
-      return value.join('');
-  })
+    for (let i = 0; i < n; i++) {
+        let converseEl = [];
+        for (let j = 0; j < n; j++) {
+            if (binaryArr1[i][j] === '1' || binaryArr2[i][j] === '1') {
+                converseEl.push('#');
+            } else if (binaryArr1[i][j] === '0' && binaryArr2[i][j] === '0') {
+                converseEl.push(' ');
+            }
+        }
+        converseArr.push(converseEl);
+    }
 
-  return result;
+    let result = converseArr.map((value) => {
+        return value.join('');
+    })
+
+    return result;
 }
