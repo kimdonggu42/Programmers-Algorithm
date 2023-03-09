@@ -11,13 +11,13 @@ function solution(sizes) {
 
     for (let i = 0; i < sizes.length; i++) {
         if (wMax < sizes[i][0]) {
-            wMax = sizes[i][0]
+            wMax = sizes[i][0];
         }
     }
 
     for (let i = 0; i < sizes.length; i++) {
         if (hMax < sizes[i][1]) {
-            hMax = sizes[i][1]
+            hMax = sizes[i][1];
         }
     }
 
