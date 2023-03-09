@@ -1,4 +1,4 @@
-// 가로 길이가 세로 길이보다 짧을 때 두 수의 위치 변경
+// 가로 길이가 세로 길이보다 짧은 명함일 경우 두 수의 위치 변경
 function solution(sizes) {
     for (let i = 0; i < sizes.length; i++) {
         if (sizes[i][0] < sizes[i][1]) {
